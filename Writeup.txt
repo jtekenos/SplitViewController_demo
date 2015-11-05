@@ -1,0 +1,42 @@
+The SplitView controller is a type of view controller that allows the user to access two panels on the same page. The left panel is of fixed width, leaving the second panel to take up the remaining space on the screen. 
+
+In landscape mode on iPad and iPhone 6 Plus, both panels are always visible. When rotated to portrait mode, the left panel is hidden by default to maximize screen real estate. The user can still access it via the navigation bar at the top of the application. 
+
+The most common example of a SplitView controller is the default Mail application on iOS devices.
+
+
+/* Components of a SplitView Controller */
+
+The SplitView Controller is the root view of the application, and it contains:
+
+- a Navigation Controller, which is the root controller for left panel and the "master" view controller by default. The navigation hierarchy is contained in this controller.
+
+- a Root View Controller that includes a table view, and holds the menu items in the left panel. 
+
+- a View Controller, which is the right panel and the "detail" view controller by default. It displays the details of the menu items listed in the Root View Controller.
+
+/* Creating a Custom SplitView Controller Application */
+
+	1) Create a new single-page application
+
+	2) In Main.storyboard, delete the provided view controller and replace with a split view controller.
+
+	3) Add two new files to the project, one for the master controller of subtype UITableViewController, and one for the detail controller of type UIViewController
+
+	4) In Main.storyboard, under identity inspector, assign the root view controller to the master table view controller from step 3, and the detail view controller to the view controller
+
+	5) In the table view controller, uncomment the 3rd method following didReceiveMemoryWarning. Change the string parameter of the return value (reuseIdetifier by default) to something more appropriate. Then, in storyboard, select the prototype cell of the TableView Controller, and enter the name of the reuse identifier in the attributs inspector (3rd tab).
+
+	6) uncomment the next tableView function (func tableView with return type of UITableView). Note the string parameter of the return variable. You may change this if you wish.
+
+	7) in Main.storyboard, select the root table view controller and in the identity inspector, set the class to be the custom controller created in step 3.
+
+	8) also in Main.storyboard, select the prototype cell and in the attributes inspector, set the Identifier to be the the string value mentioned in step 6.
+
+	9) follow the same steps from step 3 to create another cocoa touch class called DetailViewController as a subclass of UIViewController.
+
+	10) as in step 7, set the class of the detail view controller (bottom half) to the DetailViewController we just created.
+
+	11) add a label with some text to the detail view controller, and then run the xcode simulator on ipad and iphone to see the difference in behaviour with the SplitView Controller. On the ipad, a rotation in either direction should display both panels, whereas with the iphone, a back button on the navigation bar should send  you back to the table view. 
+
+	ß
