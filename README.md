@@ -1,7 +1,7 @@
 # SplitViewController_demo
 
-Basic Example of a SplitView Controller for iPad
-For iOS comp4977  wikipedia page www.comp4977palyground.krusnix.com
+###### Basic Example of a SplitView Controller in Swift
+For BCIT COMP4977 [wiki page](www.comp4977palyground.krusnix.com)
 
 
-<for education purposes only>
+*[ For education purposes only ]*
