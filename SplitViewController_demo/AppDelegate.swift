@@ -17,16 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
-    
-//    //custom
-//    if let splitViewController = self.window!.rootViewController as? UISplitViewController {
-//      let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
-//      navigationController.topViewController?.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-//      navigationController.topViewController?.navigationItem.leftItemsSupplementBackButton = true
-//      
-//      //splitViewController.delegate = splitViewController
-//    }
-    
     let splitViewController = self.window!.rootViewController as! UISplitViewController
     let leftNavController = splitViewController.viewControllers.first as! UINavigationController
     let masterViewController = leftNavController.topViewController as! MenuTableTableViewController
@@ -34,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let firstPage = masterViewController.pages.first
     detailViewController.pageOption = firstPage!
-    
-    
+
     return true
   }
 

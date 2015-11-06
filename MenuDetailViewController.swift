@@ -12,33 +12,22 @@ class MenuDetailViewController: UIViewController {
   
   var pageOption = PageOption(displayName: "Home", url: "https://support.google.com")
 
-  @IBOutlet weak var lbl_Link: UILabel!
   @IBOutlet weak var lbl_title: UILabel!
+  @IBOutlet weak var webView: UIWebView!
   
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-
-      self.lbl_title.text = "Selected: \(pageOption.displayName)"
-      self.lbl_Link.text = pageOption.url
-      
+      super.viewDidLoad()
+      // Do any additional setup after loading the view
+      self.lbl_title.text = "You are now Browsing: \(pageOption.displayName)"
+      let requestUrl = pageOption.url
+      let requestNSURL = NSURL(string: requestUrl)
+      let request = NSURLRequest(URL: requestNSURL!)
+      webView.loadRequest(request)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
